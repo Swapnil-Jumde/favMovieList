@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movies</title>
+</head>
+<body>
+{% if results|length == 0 %}
+<h1> no result found </h1>
+{% else %}
+{% for result in results: %}
+{{ loop.index }}
+
+<a href="{{ url_for('add_in_database', id=result['id']) }}">{{ result['original_title'] }}</a><br>
+{{ result['id'] }}
+{% endfor %}
+{% endif %}
+</body>
+</html>

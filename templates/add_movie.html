@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Movie</title>
+</head>
+<body>
+
+<form method="POST" action="{{ url_for('add') }}">
+    {{ form.csrf_token }}
+    <p>{{form.name.label}} <br> {{form.name(size=30)}}</p>
+    {{ form.submit }}
+</form>
+
+
+
+</body>
+</html>
